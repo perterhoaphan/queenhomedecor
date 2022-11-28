@@ -1,42 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="">
-        Nhập n <br></br>
-        <input type="text" name="n"></br>
-        <input type="submit" value="Nhập"></br>
-    </form>
-    <?php
-        $arr =array(rand(1, 100));
+<?php
 
-        echo"<h3>Gía trị ngẫu nhiên arr</h3>";
-        foreach($arr as $v) {
-            echo $v;
-        }
-        echo "<br>";
-        $dem = 0;
-        foreach($arr1 as $v){
-            if($v % 2 == 0){
-                $dem++;
-            }
-        }
-        echo "số phần tử chẵn của mảng:".$dem;
-        echo "<br>";
-        $dem5 = 0;
-        foreach($arr1 as $v){
-            if($v % 5 == 0){
-                $dem5++;
-            }
-            }    
-        echo "số phần tử chia hết cho 5 của mảng:".$dem5; 
-        
+session_start();
+
+include("includes/db.php");
+include("includes/header.php");
+include("functions/functions.php");
+include("includes/main.php");
+
+?>
+
+
+<!-- Cover -->
+<main>
+
+    <div class="carousel" style="z-index:1">
+        <ul class="slides">
+            <input type="radio" name="radio-buttons" id="img-1" checked />
+            <li class="slide-container">
+                <div class="slide-image">
+                    <img src="bannerpro.png" alt="">
+                </div>
+                <div class="carousel-controls">
+                    <label for="img-3" class="prev-slide">
+                        <span>&lsaquo;</span>
+                    </label>
+                    <label for="img-2" class="next-slide">
+                        <span>&rsaquo;</span>
+                    </label>
+                </div>
+            </li>
+            <input type="radio" name="radio-buttons" id="img-2" />
+            <li class="slide-container">
+                <div class="slide-image">
+                    <img
+                        src="https://content.r9cdn.net/rimg/dimg/db/02/06b291e8-city-14912-171317ad83a.jpg?width=1750&height=1000&xhint=3040&yhint=2553&crop=true">
+                </div>
+                <div class="carousel-controls">
+                    <label for="img-1" class="prev-slide">
+                        <span>&lsaquo;</span>
+                    </label>
+                    <label for="img-3" class="next-slide">
+                        <span>&rsaquo;</span>
+                    </label>
+                </div>
+            </li>
+            <input type="radio" name="radio-buttons" id="img-3" />
+            <li class="slide-container">
+                <div class="slide-image">
+                    <img src="https://speakzeasy.files.wordpress.com/2015/05/twa_blogpic_timisoara-4415.jpg">
+                </div>
+                <div class="carousel-controls">
+                    <label for="img-2" class="prev-slide">
+                        <span>&lsaquo;</span>
+                    </label>
+                    <label for="img-1" class="next-slide">
+                        <span>&rsaquo;</span>
+                    </label>
+                </div>
+            </li>
+            <div class="carousel-dots">
+                <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+                <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+                <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+            </div>
+        </ul>
+        <!-- <a href="shop.php" class="btn1">View all products
+      </a> -->
+    </div>
+    <!-- Main -->
+    <div class="wrapper">
+        <h1>Sản phẩm của chúng tôi<h1>
+
+    </div>
+
+
+
+    <div id="content" class="container">
+        <!-- container Starts -->
+
+        <div class="row">
+            <!-- row Starts -->
+
+            <?php
+
+    getPro();
 
     ?>
-</body>
-</html>
+
+        </div><!-- row Ends -->
+
+    </div><!-- container Ends -->
+    <!-- FOOTER -->
+    <?php
+      include("includes/footer.php");
+    ?>
+    
+    </body>
+
+    </html>
