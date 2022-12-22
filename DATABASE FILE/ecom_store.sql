@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 16, 2021 at 09:33 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th12 22, 2022 lúc 07:44 AM
+-- Phiên bản máy phục vụ: 10.4.25-MariaDB
+-- Phiên bản PHP: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecom_store`
+-- Cơ sở dữ liệu: `ecom_store`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `about_us`
+-- Cấu trúc bảng cho bảng `about_us`
 --
 
 CREATE TABLE `about_us` (
@@ -34,7 +35,7 @@ CREATE TABLE `about_us` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `about_us`
+-- Đang đổ dữ liệu cho bảng `about_us`
 --
 
 INSERT INTO `about_us` (`about_id`, `about_heading`, `about_short_desc`, `about_desc`) VALUES
@@ -43,7 +44,7 @@ INSERT INTO `about_us` (`about_id`, `about_heading`, `about_short_desc`, `about_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Cấu trúc bảng cho bảng `admins`
 --
 
 CREATE TABLE `admins` (
@@ -59,16 +60,16 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admins`
+-- Đang đổ dữ liệu cho bảng `admins`
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_contact`, `admin_country`, `admin_job`, `admin_about`) VALUES
-(2, 'Administrator', 'admin@mail.com', 'Password@123', 'user-profile-min.png', '7777775500', 'Morocco', 'Front-End Developer', ' Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical ');
+(2, 'Administrator', 'admin@mail.com', 'Password@123', 'hp.jpg', '7777775500', 'Morocco', 'Front-End Developer', '  Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical  ');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bundle_product_relation`
+-- Cấu trúc bảng cho bảng `bundle_product_relation`
 --
 
 CREATE TABLE `bundle_product_relation` (
@@ -81,7 +82,7 @@ CREATE TABLE `bundle_product_relation` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
 CREATE TABLE `cart` (
@@ -95,7 +96,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Cấu trúc bảng cho bảng `categories`
 --
 
 CREATE TABLE `categories` (
@@ -106,19 +107,19 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `categories`
+-- Đang đổ dữ liệu cho bảng `categories`
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_top`, `cat_image`) VALUES
-(2, 'Feminine', 'no', 'feminelg.png'),
-(3, 'Kids', 'no', 'kidslg.jpg'),
-(4, 'Others', 'yes', 'othericon.png'),
-(5, 'Men', 'yes', 'malelg.png');
+(6, 'Thác Khói', 'yes', ''),
+(7, 'Tranh', 'yes', ''),
+(8, '??ng h?', 'yes', ''),
+(9, 'Combo tranh', 'yes', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact_us`
+-- Cấu trúc bảng cho bảng `contact_us`
 --
 
 CREATE TABLE `contact_us` (
@@ -129,7 +130,7 @@ CREATE TABLE `contact_us` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `contact_us`
+-- Đang đổ dữ liệu cho bảng `contact_us`
 --
 
 INSERT INTO `contact_us` (`contact_id`, `contact_email`, `contact_heading`, `contact_desc`) VALUES
@@ -138,7 +139,7 @@ INSERT INTO `contact_us` (`contact_id`, `contact_email`, `contact_heading`, `con
 -- --------------------------------------------------------
 
 --
--- Table structure for table `coupons`
+-- Cấu trúc bảng cho bảng `coupons`
 --
 
 CREATE TABLE `coupons` (
@@ -152,7 +153,7 @@ CREATE TABLE `coupons` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `coupons`
+-- Đang đổ dữ liệu cho bảng `coupons`
 --
 
 INSERT INTO `coupons` (`coupon_id`, `product_id`, `coupon_title`, `coupon_price`, `coupon_code`, `coupon_limit`, `coupon_used`) VALUES
@@ -162,7 +163,7 @@ INSERT INTO `coupons` (`coupon_id`, `product_id`, `coupon_title`, `coupon_price`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Cấu trúc bảng cho bảng `customers`
 --
 
 CREATE TABLE `customers` (
@@ -180,7 +181,7 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `customers`
+-- Đang đổ dữ liệu cho bảng `customers`
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`, `customer_confirm_code`) VALUES
@@ -193,7 +194,7 @@ INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `cust
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer_orders`
+-- Cấu trúc bảng cho bảng `customer_orders`
 --
 
 CREATE TABLE `customer_orders` (
@@ -203,12 +204,12 @@ CREATE TABLE `customer_orders` (
   `invoice_no` int(100) NOT NULL,
   `qty` int(10) NOT NULL,
   `size` text NOT NULL,
-  `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `order_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `order_status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `customer_orders`
+-- Đang đổ dữ liệu cho bảng `customer_orders`
 --
 
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
@@ -220,12 +221,18 @@ INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice
 (28, 5, 180, 361540113, 2, 'Medium', '2021-09-15 03:25:42', 'Complete'),
 (29, 3, 100, 858195683, 1, 'Large', '2021-09-15 03:14:01', 'Complete'),
 (31, 6, 245, 901707655, 1, 'Medium', '2021-09-15 03:52:18', 'Complete'),
-(32, 6, 75, 2125554712, 1, 'Large', '2021-09-15 03:52:58', 'pending');
+(32, 6, 75, 2125554712, 1, 'Large', '2021-09-15 03:52:58', 'pending'),
+(33, 3, 0, 288810762, 0, 'Select a Size', '2022-11-28 04:43:14', 'pending'),
+(34, 3, 2000000, 288810762, 1, 'V?a', '2022-11-28 04:43:14', 'pending'),
+(35, 3, 1650000, 288810762, 1, 'Ch?n kích c?', '2022-11-28 04:43:14', 'pending'),
+(36, 3, 1550000, 1825223507, 1, 'L?n', '2022-11-28 05:07:26', 'pending'),
+(37, 3, 6000000, 1825223507, 3, 'V?a', '2022-11-28 05:07:26', 'pending'),
+(38, 3, 2000000, 1994154562, 1, 'V?a', '2022-11-28 05:16:34', 'pending');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `enquiry_types`
+-- Cấu trúc bảng cho bảng `enquiry_types`
 --
 
 CREATE TABLE `enquiry_types` (
@@ -234,7 +241,7 @@ CREATE TABLE `enquiry_types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `enquiry_types`
+-- Đang đổ dữ liệu cho bảng `enquiry_types`
 --
 
 INSERT INTO `enquiry_types` (`enquiry_id`, `enquiry_title`) VALUES
@@ -245,7 +252,7 @@ INSERT INTO `enquiry_types` (`enquiry_id`, `enquiry_title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `manufacturers`
+-- Cấu trúc bảng cho bảng `manufacturers`
 --
 
 CREATE TABLE `manufacturers` (
@@ -256,7 +263,7 @@ CREATE TABLE `manufacturers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `manufacturers`
+-- Đang đổ dữ liệu cho bảng `manufacturers`
 --
 
 INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufacturer_top`, `manufacturer_image`) VALUES
@@ -270,7 +277,7 @@ INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufactu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `payments`
+-- Cấu trúc bảng cho bảng `payments`
 --
 
 CREATE TABLE `payments` (
@@ -283,31 +290,10 @@ CREATE TABLE `payments` (
   `payment_date` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `payments`
---
-
-INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `ref_no`, `code`, `payment_date`) VALUES
-(2, 1607603019, 447, 'UBL/Omni', 5678, 33, '11/1/2016'),
-(3, 314788500, 345, 'UBL/Omni', 443, 865, '11/1/2016'),
-(4, 6906, 400, 'Western Union', 101025780, 696950, 'January 1'),
-(5, 10023, 20, 'Bank Code', 1000010101, 6969, '09/14/2021'),
-(6, 69088, 100, 'Bank Code', 1010101022, 88669, '09/14/2021'),
-(7, 1835758347, 480, 'Western Union', 1785002101, 66990, '09-04-2021'),
-(8, 1835758347, 480, 'Bank Code', 1012125550, 66500, '09-14-2021'),
-(9, 1144520, 480, 'Bank Code', 1025000020, 66990, '09-14-2021'),
-(10, 2145000000, 480, 'Bank Code', 2147483647, 66580, '09-14-2021'),
-(20, 858195683, 100, 'Bank Code', 1400256000, 47850, '09-13-2021'),
-(21, 2138906686, 120, 'Bank Code', 1455000020, 202020, '09-13-2021'),
-(22, 2138906686, 120, 'Bank Code', 1450000020, 202020, '09-15-2021'),
-(23, 361540113, 180, 'Western Union', 1470000020, 12001, '09-15-2021'),
-(24, 361540113, 180, 'UBL/Omni', 1258886650, 200, '09-15-2021'),
-(25, 901707655, 245, 'Western Union', 1200002588, 88850, '09-15-2021');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pending_orders`
+-- Cấu trúc bảng cho bảng `pending_orders`
 --
 
 CREATE TABLE `pending_orders` (
@@ -321,24 +307,20 @@ CREATE TABLE `pending_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pending_orders`
+-- Đang đổ dữ liệu cho bảng `pending_orders`
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
-(17, 2, 1715523401, '9', 2, 'Large', 'pending'),
-(23, 3, 1762810884, '12', 1, 'Medium', 'Complete'),
-(24, 4, 1972602052, '5', 1, 'Large', 'Complete'),
-(25, 4, 2008540778, '13', 1, 'Medium', 'pending'),
-(27, 5, 2138906686, '14', 1, 'Small', 'Complete'),
-(28, 5, 361540113, '13', 2, 'Medium', 'Complete'),
-(29, 3, 858195683, '5', 1, 'Large', 'Complete'),
-(31, 6, 901707655, '8', 1, 'Medium', 'Complete'),
-(32, 6, 2125554712, '15', 1, 'Large', 'pending');
+(34, 3, 288810762, '23', 1, 'V?a', 'pending'),
+(35, 3, 288810762, '26', 1, 'Ch?n kích c?', 'pending'),
+(36, 3, 1825223507, '21', 1, 'L?n', 'pending'),
+(37, 3, 1825223507, '23', 3, 'V?a', 'pending'),
+(38, 3, 1994154562, '23', 1, 'V?a', 'pending');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -346,7 +328,7 @@ CREATE TABLE `products` (
   `p_cat_id` int(10) NOT NULL,
   `cat_id` int(10) NOT NULL,
   `manufacturer_id` int(10) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `product_title` text NOT NULL,
   `product_url` text NOT NULL,
   `product_img1` text NOT NULL,
@@ -363,22 +345,23 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
 INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_url`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_psp_price`, `product_desc`, `product_features`, `product_video`, `product_keywords`, `product_label`, `status`) VALUES
-(5, 7, 5, 5, '2021-09-14 09:13:25', 'Denim Borg Lined Western Jacket', 'product-url-5', 'Next-Denim-Borg-Lined-Western-Jacket-0463-0064553-1-pdp_slider_l.jpg', 'Next-Denim-Borg-Lined-Western-Jacket-0463-0064553-2-pdp_slider_l.jpg', 'Next-Denim-Borg-Lined-Western-Jacket-0465-0064553-3-pdp_slider_l.jpg', 259, 100, '\r\n<p>This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description.</p>\r\n', '\r\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,\r\n', '\r\n<iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/qRswlmADRa8\" frameborder=\"0\" allowfullscreen></iframe>\r\n', 'Jackets', 'Gift', 'product'),
-(8, 4, 2, 4, '2021-09-14 10:13:02', 'Sleeveless Flaux Fur Hybrid Coat', 'product-url-8', 'Black Blouse Versace Coat1.jpg', 'Black Blouse Versace Coat2.jpg', 'Black Blouse Versace Coat3.jpg', 245, 100, '\r\n\r\n\r\n<p>This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description.</p>\r\n\r\n\r\n', '\r\n\r\n\r\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,\r\n\r\n\r\n', '\r\n\r\n\r\n<iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/qRswlmADRa8\" frameborder=\"0\" allowfullscreen></iframe>\r\n\r\n\r\n', 'Coats', 'New', 'product'),
-(9, 5, 4, 7, '2021-09-14 17:06:30', 'Long Sleeves Polo Shirt for Men', 'product-url-9', 'product-1.jpg', 'product-2.jpg', 'product-3.jpg', 50, 35, '\r\n\r\n\r\n\r\n<p>This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description. This is a sample product description.</p>\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n<iframe width=\"854\" height=\"480\" src=\"https://www.youtube.com/embed/qRswlmADRa8\" frameborder=\"0\" allowfullscreen></iframe>\r\n\r\n\r\n\r\n', 'T-Shirt', 'Sale', 'product'),
-(12, 8, 5, 2, '2021-05-25 09:15:09', 'Ultraboost 21 PrimeBlue Shoes', 'ultraboost-21-adidas', 'Ultraboost_21.jpg', 'Ultraboost_21_2.jpg', 'Ultraboost_21_3.jpg', 150, 180, '\r\n\r\nThis product is made with Primeblue, a high-performance recycled material made in part with Parley Ocean Plastic. 50% of the upper is textile, 92% of the textile is Primeblue yarn. No virgin polyester.', '\r\n\r\nComfortable and responsive, Ultraboost became our first shoe to be as popular in streetwear style as it is in performance running.', '\r\nhttps://assets.adidas.com/videos/q_auto,f_auto,g_auto/599fff35a3cf432aa9bbac7c0091316f_d98c/Ultraboost_21_Primeblue_Shoes_Blue_FX7729_video.mp4\r\n', 'sneakers adidas ultraboost shoes', 'New', 'product'),
-(13, 9, 2, 3, '2021-09-14 16:26:51', 'Nike Sportswear Essential Collection', 'nike-sportswear-essen-col', 'nike-s.jpg', 'nike-s2.jpg', 'nike-s02.jpg', 90, 85, '\r\n\r\nThis is a sample text. This is a sample text. This is a sample text. This is a sample text. This is a sample text. This is a sample text. This is a sample text. This is a sample text. This is a sample text. This is a sample text. This is a sample text. This is a sample text.\r\n\r\n\r\n\r\n', '\r\n\r\n\r\nThis is a sample text. This is a sample text. This is a sample text.This is a sample text. This is a sample text. This is a sample text.This is a sample text. This is a sample text. This is a sample text.This is a sample text. This is a sample text. This is a sample text.\r\n\r\n', '\r\n\r\n\r\nThis is a sample text. This is a sample text. This is a sample text.\r\n\r\n\r\n', 'nike sportswear', 'Featured', 'product'),
-(14, 5, 5, 7, '2021-09-14 17:03:38', 'Demo Product Title Name - Test', 'demo-product-showcase', 'Prod-placeholder.jpg', 'Prod-placeholder.jpg', 'Prod-placeholder.jpg', 120, 111, '\r\nThis is a demo. This is a demo. This is a demo. This is a demo.\r\n\r\n\r\n', '\r\n\r\n\r\nThis is a demo.\r\n', '\r\n\r\n\r\nThis is a demo.\r\n', 'demo test product', 'Test', 'product'),
-(15, 5, 5, 8, '2021-09-15 03:46:42', 'Gildan 1800 Ultra Cotton Polo Shirt', 'cotton-polo-shirt', 'g18bulk.jpg', 'g18bulk2.jpg', 'g18bulk3.jpg', 88, 75, '\r\nTHIS IS A DEMO DESCRIPTION\r\n', '\r\n\r\nDEMO FEATURES\r\n\r\n', '\r\n\r\n\r\n\r\n', 'polo shirt', 'Sale', 'bundle');
+(19, 0, 6, 0, '2022-11-21 02:55:47', 'Thác khói N01', 'thac-khoi-N01', '312094104_664415788639756_6417096256183943916_n.jpg', '', '', 1500000, 0, '\r\n\r\n', '\r\n\r\n', '\r\n\r\n', '', '', 'product'),
+(20, 0, 6, 0, '2022-11-21 02:57:33', 'Thác khói N02', 'thac-khoi-N02', '312171880_664415781973090_4217581176011733096_n.jpg', '', '', 1600000, 0, '\r\n\r\n', '\r\n\r\n', '\r\n\r\n', '', '', 'product'),
+(21, 0, 6, 0, '2022-11-21 02:58:27', 'Thác khói N03', 'thac-khoi-N03', '312474468_664423608638974_2197189577736315263_n.jpg', '', '', 1550000, 1550000, '\r\n\r\n', '\r\n\r\n', '\r\n\r\n', '', '', 'product'),
+(22, 0, 6, 0, '2022-11-21 03:05:39', 'Thác khói N04', 'thac-khoi-N04', '313403177_664415808639754_753459686132165158_n.jpg', '', '', 1600000, 1600000, '\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', '\r\n\r\n\r\n\r\n', 'thac nuoc', 'rtgtrg', 'product'),
+(23, 0, 6, 0, '2022-11-21 03:06:55', 'Thác khói N05', 'thac-khoi-N05', '312539990_664424695305532_7538896530777527092_n.jpg', '', '', 2000000, 0, '\r\n\r\n', '\r\n\r\n', '\r\n\r\n', '', '', 'product'),
+(24, 0, 6, 0, '2022-11-21 03:15:18', 'Thác khói N06', 'thac-khoi-N06', '312556790_664415778639757_243423552034114991_n.jpg', '', '', 1400000, 0, '\r\n\r\n', '\r\n\r\n', '\r\n\r\n', '', '', 'product'),
+(25, 0, 6, 0, '2022-11-21 03:15:42', 'Thác khói N07', 'thac-khoi-N07', '312617332_664415805306421_684412681338107353_n.jpg', '', '', 1450000, 0, '\r\n\r\n', '\r\n\r\n', '\r\n\r\n', '', '', 'product'),
+(26, 0, 6, 0, '2022-11-21 03:16:28', 'Thác khói N08', 'thac-khoi-N08', '313044582_664415785306423_70437619776002383_n.jpg', '', '', 1650000, 0, '\r\n\r\n', '\r\n\r\n', '\r\n\r\n', '', '', 'product');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_categories`
+-- Cấu trúc bảng cho bảng `product_categories`
 --
 
 CREATE TABLE `product_categories` (
@@ -389,7 +372,7 @@ CREATE TABLE `product_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `product_categories`
+-- Đang đổ dữ liệu cho bảng `product_categories`
 --
 
 INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_top`, `p_cat_image`) VALUES
@@ -403,7 +386,7 @@ INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_top`, `p_cat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `store`
+-- Cấu trúc bảng cho bảng `store`
 --
 
 CREATE TABLE `store` (
@@ -416,7 +399,7 @@ CREATE TABLE `store` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `store`
+-- Đang đổ dữ liệu cho bảng `store`
 --
 
 INSERT INTO `store` (`store_id`, `store_title`, `store_image`, `store_desc`, `store_button`, `store_url`) VALUES
@@ -427,7 +410,7 @@ INSERT INTO `store` (`store_id`, `store_title`, `store_image`, `store_desc`, `st
 -- --------------------------------------------------------
 
 --
--- Table structure for table `terms`
+-- Cấu trúc bảng cho bảng `terms`
 --
 
 CREATE TABLE `terms` (
@@ -438,7 +421,7 @@ CREATE TABLE `terms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `terms`
+-- Đang đổ dữ liệu cho bảng `terms`
 --
 
 INSERT INTO `terms` (`term_id`, `term_title`, `term_link`, `term_desc`) VALUES
@@ -449,7 +432,7 @@ INSERT INTO `terms` (`term_id`, `term_title`, `term_link`, `term_desc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlist`
+-- Cấu trúc bảng cho bảng `wishlist`
 --
 
 CREATE TABLE `wishlist` (
@@ -459,7 +442,7 @@ CREATE TABLE `wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `wishlist`
+-- Đang đổ dữ liệu cho bảng `wishlist`
 --
 
 INSERT INTO `wishlist` (`wishlist_id`, `customer_id`, `product_id`) VALUES
@@ -469,206 +452,224 @@ INSERT INTO `wishlist` (`wishlist_id`, `customer_id`, `product_id`) VALUES
 (5, 6, 15);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `about_us`
+-- Chỉ mục cho bảng `about_us`
 --
 ALTER TABLE `about_us`
   ADD PRIMARY KEY (`about_id`);
 
 --
--- Indexes for table `admins`
+-- Chỉ mục cho bảng `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `bundle_product_relation`
+-- Chỉ mục cho bảng `bundle_product_relation`
 --
 ALTER TABLE `bundle_product_relation`
   ADD PRIMARY KEY (`rel_id`);
 
 --
--- Indexes for table `cart`
+-- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`p_id`);
 
 --
--- Indexes for table `categories`
+-- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
--- Indexes for table `contact_us`
+-- Chỉ mục cho bảng `contact_us`
 --
 ALTER TABLE `contact_us`
   ADD PRIMARY KEY (`contact_id`);
 
 --
--- Indexes for table `coupons`
+-- Chỉ mục cho bảng `coupons`
 --
 ALTER TABLE `coupons`
   ADD PRIMARY KEY (`coupon_id`);
 
 --
--- Indexes for table `customers`
+-- Chỉ mục cho bảng `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `customer_orders`
+-- Chỉ mục cho bảng `customer_orders`
 --
 ALTER TABLE `customer_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `enquiry_types`
+-- Chỉ mục cho bảng `enquiry_types`
 --
 ALTER TABLE `enquiry_types`
   ADD PRIMARY KEY (`enquiry_id`);
 
 --
--- Indexes for table `manufacturers`
+-- Chỉ mục cho bảng `manufacturers`
 --
 ALTER TABLE `manufacturers`
   ADD PRIMARY KEY (`manufacturer_id`);
 
 --
--- Indexes for table `payments`
+-- Chỉ mục cho bảng `payments`
 --
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`payment_id`);
 
 --
--- Indexes for table `pending_orders`
+-- Chỉ mục cho bảng `pending_orders`
 --
 ALTER TABLE `pending_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indexes for table `product_categories`
+-- Chỉ mục cho bảng `product_categories`
 --
 ALTER TABLE `product_categories`
   ADD PRIMARY KEY (`p_cat_id`);
 
 --
--- Indexes for table `store`
+-- Chỉ mục cho bảng `store`
 --
 ALTER TABLE `store`
   ADD PRIMARY KEY (`store_id`);
 
 --
--- Indexes for table `terms`
+-- Chỉ mục cho bảng `terms`
 --
 ALTER TABLE `terms`
   ADD PRIMARY KEY (`term_id`);
 
 --
--- Indexes for table `wishlist`
+-- Chỉ mục cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD PRIMARY KEY (`wishlist_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `about_us`
+-- AUTO_INCREMENT cho bảng `about_us`
 --
 ALTER TABLE `about_us`
   MODIFY `about_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT cho bảng `admins`
 --
 ALTER TABLE `admins`
   MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `bundle_product_relation`
+-- AUTO_INCREMENT cho bảng `bundle_product_relation`
 --
 ALTER TABLE `bundle_product_relation`
   MODIFY `rel_id` int(10) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
--- AUTO_INCREMENT for table `contact_us`
+-- AUTO_INCREMENT cho bảng `contact_us`
 --
 ALTER TABLE `contact_us`
   MODIFY `contact_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `coupons`
+-- AUTO_INCREMENT cho bảng `coupons`
 --
 ALTER TABLE `coupons`
   MODIFY `coupon_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT cho bảng `customers`
 --
 ALTER TABLE `customers`
   MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT for table `customer_orders`
+-- AUTO_INCREMENT cho bảng `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
 --
--- AUTO_INCREMENT for table `enquiry_types`
+-- AUTO_INCREMENT cho bảng `enquiry_types`
 --
 ALTER TABLE `enquiry_types`
   MODIFY `enquiry_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `manufacturers`
+-- AUTO_INCREMENT cho bảng `manufacturers`
 --
 ALTER TABLE `manufacturers`
   MODIFY `manufacturer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT for table `payments`
+-- AUTO_INCREMENT cho bảng `payments`
 --
 ALTER TABLE `payments`
   MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 --
--- AUTO_INCREMENT for table `pending_orders`
+-- AUTO_INCREMENT cho bảng `pending_orders`
 --
 ALTER TABLE `pending_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
 --
--- AUTO_INCREMENT for table `product_categories`
+-- AUTO_INCREMENT cho bảng `product_categories`
 --
 ALTER TABLE `product_categories`
   MODIFY `p_cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
--- AUTO_INCREMENT for table `store`
+-- AUTO_INCREMENT cho bảng `store`
 --
 ALTER TABLE `store`
   MODIFY `store_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT for table `terms`
+-- AUTO_INCREMENT cho bảng `terms`
 --
 ALTER TABLE `terms`
   MODIFY `term_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `wishlist`
+-- AUTO_INCREMENT cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
   MODIFY `wishlist_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
